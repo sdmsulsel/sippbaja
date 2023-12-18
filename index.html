@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PENGISIAN DATA </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- cdn icon bostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+   
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <div class="col-md-6">
+<br>
+        <div class="fw-bold">PENGISIAN DATA BAJA</div> 
+        <br>
+       
+        <form name="my-form">
+
+            <div class="mb-3">
+                <label class="form-label">PROFIL</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="nama" name="nama" required placeholder="Nama Lengkap" aria-label="NAMA LENGKAP ANDA">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PHOTO PDH LATAR KUNING (FILE Png,Jpeg,Jpg ukuran minimal 500 KB)</label>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="file_photo" name="file_photo" required placeholder="Photo Anda (File dibawah 500KB)" aria-label="Photo Anda" onchange="validasiFile(this, [''], 500)" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Pangkat</label>
+                <div class="input-group mb-3">
+                    <!-- <label for="pangkat" class="form-label">PANGKAT</label> -->
+                    <select name="pangkat" id="pangkat" class="form-select"  required>
+                        <option selected>Pilih Salah Satu</option>
+                        <!-- <option value="kombespol">Kombes Pol</option> -->
+                        <option value="akbp">Akbp</option>
+                        <option value="kompol">Kompol</option>
+                        <option value="akp">Akp</option>
+                        <option value="iptu">Iptu</option>
+                        <option value="ipda">Ipda</option>
+                        <option value="aiptu">Aiptu</option>
+                        <option value="aipda">Aipda</option>
+                        <option value="bripka">Bripka</option>
+                        <option value="brigpol">Brigpol</option>
+                        <option value="briptu">Briptu</option>
+                        <option value="bripda">Bripda</option>
+                        <option value="abrip">Abrip</option>
+                        <option value="abriptu">Abriptu</option>
+                        <option value="abripda">Abripda</option>
+                        <option value="bharaka">Bharaka</option>
+                        <option value="bharatu">Bharatu</option>
+                        <option value="bharada">Bharada</option>
+                        <option value="pembutama">Pembutama</option>
+                        <option value="pembmadya">Pembmadya</option>
+                        <option value="pembmuda">Pembmuda</option>
+                        <option value="pembina I">Pembina I</option>
+                        <option value="pembina">Pembina</option>
+                        <option value="penata I">Penata I</option>
+                        <option value="penata">Penata</option>
+                        <option value="penda I">Penda I</option>
+                        <option value="penda">Penda</option>
+                        <option value="pengatur I">Pengatur I</option>
+                        <option value="pengatur">Pengatur</option>
+                        <option value="pengda I">Pengda I</option>
+                        <option value="pengda">Pengda</option>
+                        <option value="juru I">Juru I</option>
+                        <option value="juru">Juru</option>
+                        <option value="jurmud I">Jurmud I</option>
+                        <option value="jurmud">Jurmud</option>
+                        <option value="capeg">Capeg</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">NRP</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="nrp" name="nrp" required placeholder="NRP ANDA" aria-label="NRP LENGKAP ANDA">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">KARTU KELUARGA / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="nokk" name="nokk" required placeholder="Nomor Kartu Keluarga" aria-label="Nomor Kartu Keluarga">
+                    <input type="file" class="form-control" id="file_kk" name="file_kk" onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File KK anda" aria-label="File KK Anda" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">KARTU TANDA PENDUDUK (KTP) / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="noktp" name="noktp" required placeholder="Nomor Kartu Penduduk" aria-label="Nomor Kartu Tanda Penduduk">
+                    <input type="file" class="form-control" id="file_ktp" name="file_ktp"  onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File KTP anda" aria-label="File KTP Anda" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">KARTU BPJS / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="nobpjs" name="nobpjs" required placeholder="Nomor BPJS" aria-label="Nomor BPJS">
+                    <input type="file" class="form-control" id="file_bpjs" name="file_bpjs"  onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File BPJS anda" aria-label="File BPJS Anda" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">KARTU ASABRI / / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="noasabri" name="noasabri" required placeholder="Nomor ASABRI" aria-label="Nomor ASABRI">
+                    <input type="file" class="form-control" id="file_asabri" name="file_asabri" onchange="validasiFile(this, ['pdf'], 500)"  required placeholder="File ASABRI anda" aria-label="File ASABRI Anda" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">KARTU SIM (SURAT IZIN MENGENDARA) / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="nosim" name="nosim" required placeholder="Nomor SIM" aria-label="Nomor SIM">
+                    <input type="file" class="form-control" id="file_sim" name="file_sim" onchange="validasiFile(this, ['pdf'], 500)"  required placeholder="File SIM anda" aria-label="File  SIM Anda" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PANGKAT TERAKHIR / / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="nopangkat" name="nopangkat" required placeholder="Nomor Skep Pangkat" aria-label="Nomor Skep Pangkat">
+                    <input type="file" class="form-control" id="file_pangkat" name="file_pangkat" onchange="validasiFile(this, ['pdf'], 500)"  required placeholder="File Pangkat anda" aria-label="File  Pangkat Anda" required>
+                </div>
+                <label class="form-label">TMT PANGKAT TERAKHIR</label>
+                <div class="input-group mb-3">
+                    <input type="date" class="form-control" id="tmtpangkat" name="tmtpangkat" required placeholder="Tanggal TMT Pangkat" aria-label="Tanggal TMT Pangkat" required>
+                </div>
+                <label class="form-label">TANGGAL SKEP PANGKAT TERAKHIR</label>
+                <div class="input-group mb-3">
+                    <input type="date" class="form-control" id="skeppangkat" name="skeppangkat" required placeholder="Tanggal SKEP Pangkat" aria-label="Tanggal SKEP Pangkat" required>
+                </div>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label"> NAMA  SEKOLAH DASAR DAN AKREDITASI </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="namasd" name="namasd" required placeholder="Nama Sekolah Dasar" aria-label="Nama Sekolah Dasar">
+                    <select name="akreditasisd" id="akreditasisd" class="form-select"  required>
+                        <option selected>Pilih Salah Satu</option>
+                        <!-- <option value="kombespol">Kombes Pol</option> -->
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                        <option value="negeri">Negeri</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">TANGGAL MULAI DAN LULUS PENDIDIKAN SEKOLAH DASAR</label>
+                <div class="input-group mb-3">
+                    <input type="date" class="form-control" id="mulaisd" name="mulaisd" required placeholder="tanggal mulai sd" aria-label="tanggal mulai sd">
+                    <input type="date" class="form-control" id="lulussd" name="lulussd" required placeholder="tanggal lulus sd" aria-label="tanggal lulus sd">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">IJAZAH SD / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="noijazahsd" name="noijazahsd" required placeholder="Nomor Ijazah SD" aria-label="Nomor Ijazah SD">
+                    <input type="file" class="form-control" id="file_ijazahsd"  onchange="validasiFile(this, ['pdf'], 500)" name="file_ijazahsd" required placeholder="File IJAZAH SD" aria-label="File  IJAZAH SD" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">TRANSKRIP NILAI SD / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="nilaisd" name="nilaisd" required placeholder="Transkrip Nilai SD" aria-label="Transkrip Nilai SD">
+                    <input type="file" class="form-control" id="file_transkripsd"  onchange="validasiFile(this, ['pdf'], 500)" name="file_transkripsd" required placeholder="File Transkrip SD" aria-label="File Transkrip SD" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"> NAMA  SEKOLAH MENENGAH PERTAMA DAN AKREDITASI </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="namasmp" name="namasmp" required placeholder="Nama SMP" aria-label="Nama SMP">
+                    <select name="akreditasismp" id="akreditasismp" class="form-select"  required>
+                        <option selected>Pilih Salah Satu</option>
+                        <!-- <option value="kombespol">Kombes Pol</option> -->
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                        <option value="negeri">Negeri</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">TANGGAL MULAI DAN LULUS PENDIDIKAN SEKOLAH MENENGAH PERTAMA</label>
+                <div class="input-group mb-3">
+                    <input type="date" class="form-control" id="mulaismp" name="mulaismp" required placeholder="tanggal mulai smp" aria-label="tanggal mulai smp">
+                    <input type="date" class="form-control" id="lulussmp" name="lulussmp" required placeholder="tanggal lulus smp" aria-label="tanggal lulus smp">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">IJAZAH SMP / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="noijazahsmp" name="noijazahsmp" required placeholder="Nomor Ijazah smp" aria-label="Nomor Ijazah smp">
+                    <input type="file" class="form-control" id="file_ijazahsmp" name="file_ijazahsmp"  onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File IJAZAH smp" aria-label="File  IJAZAH smp" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">TRANSKRIP NILAI SMP / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="nilaismp" name="nilaismp" required placeholder="Transkrip Nilai smp" aria-label="Transkrip Nilai smp">
+                    <input type="file" class="form-control" id="file_transkripsmp" name="file_transkripsmp"  onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File Transkrip smp" aria-label="File Transkrip smp" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"> NAMA  SMA/SMK/MA DAN AKREDITASI </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="namasma" name="namasma" required placeholder="Nama sma" aria-label="Nama sma">
+                    <select name="akreditasisma" id="akreditasisma" class="form-select"  required>
+                        <option selected>Pilih Salah Satu</option>
+                        <!-- <option value="kombespol">Kombes Pol</option> -->
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                        <option value="negeri">Negeri</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">TANGGAL MULAI DAN LULUS PENDIDIKAN SEKOLAH MENENGAH PERTAMA</label>
+                <div class="input-group mb-3">
+                    <input type="date" class="form-control" id="mulaisma" name="mulaisma" required placeholder="tanggal mulai sma" aria-label="tanggal mulai sma">
+                    <input type="date" class="form-control" id="lulussma" name="lulussma" required placeholder="tanggal lulus sma" aria-label="tanggal lulus sma">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">IJAZAH SMA / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="noijazahsma" name="noijazahsma" required placeholder="Nomor Ijazah sma" aria-label="Nomor Ijazah sma">
+                    <input type="file" class="form-control" id="file_ijazahsma" name="file_ijazahsma"  onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File IJAZAH sma" aria-label="File  IJAZAH sma" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">TRANSKRIP NILAI SMA / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="nilaisma" name="nilaisma" required placeholder="Transkrip Nilai SMA" aria-label="Transkrip Nilai SMA">
+                    <input type="file" class="form-control" id="file_transkripsma" name="file_transkripsma"  onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File Transkrip sma" aria-label="File Transkrip sma" required>
+                </div>
+            </div>
+
+           
+            <div class="mb-3">
+                <label class="form-label"> PENDIDIKAN KEPOLISIAN</label>
+                <div class="input-group mb-3">
+                    <select name="jenisdikpolri" id="jenisdikpolri" class="form-select"  required>
+                        <option selected>Pilih Salah Satu</option>
+                        <!-- <option value="kombespol">Kombes Pol</option> -->
+                        <option value="Bintara PTU">Bintara PTU</option>
+                        <option value="Bintara Brimob">Bintara Brimob</option>
+                        <option value="Tamtama Brimob">Tamtama Brimob</option>
+                        <option value="Tamtama Polairud">Tamtama Polairud</option>
+                    </select>
+                    <input type="number" class="form-control" id="rangkingpolri" name="rangkingpolri" required placeholder="Rangkin Pendidikan Polri" aria-label="Nama sma">
+                   
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">TANGGAL MULAI DAN LULUS PENDIDIKAN POLRI</label>
+                <div class="input-group mb-3">
+                    <input type="date" class="form-control" id="mulaidikpolri" name="mulaidikpolri" required placeholder="tanggal mulai pendidikan Polri" aria-label="tanggal mulai pendidikan Polri">
+                    <input type="date" class="form-control" id="lulusdikpolri" name="lulusdikpolri" required placeholder="tanggal lulus pendidikan Polri" aria-label="tanggal lulus pendidikan Polri">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">IJAZAH POLRI / NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="noijazahpolri" name="noijazahpolri" required placeholder="Nomor Ijazah Polri" aria-label="Nomor Ijazah Polri">
+                    <input type="file" class="form-control" id="file_ijazahpolri" name="file_ijazahpolri"  onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File Ijazah Polri" aria-label="File  Ijazah Polri" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">TRANSKRIP NILAI POLRI/ NOMOR DAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="nilaipolri" name="nilaipolri" required placeholder="Transkrip Nilai Polri" aria-label="Transkrip Nilai Polri">
+                    <input type="file" class="form-control" id="file_transkrippolri" name="file_transkrippolri"  onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File Transkrip Polri" aria-label="File Transkrip Polri" required>
+                </div>
+            </div>
+
+
+
+
+            
+
+<!-- alert -->
+<div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+    <strong>Terima Kasih !!</strong> Jawaban anda telah kami terima
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<!-- kirim -->
+            <div class="col-12" style="margin-top: 30px;">
+               <button type="submit" class="btn btn-primary btn-kirim">KIRIM</button>
+
+
+               <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                <span role="status">Loading...</span>
+              </button>
+            </div>
+
+        </form>
+        
+        <small class="block">Dev By Brigpol Romi Sunggara  <a href="https://instagram.com/romisunggara?igshid=OGQ5ZDc2ODk2ZA==">@romisunggara</a>
+    </small>
+
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+
+    
+    <!-- <small class="block">
+        &copy; 2023 BIRO SDM POLDA SULSEL
+        </small> -->
+
+</div>
+
+
+<!-- <div style="padding:20px">
+<iframe weidth="1000" height="600" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzTI49L667Kajyy1tyu78d3J6kb0jlyMqocMF8a-zzxNPoUg8hMJpmMeUy-tTaW-hV-3xA4GSVrqyU/pubhtml?gid=1328465709&single=true"></iframe>
+</div>
+</div> -->
+
+
+</body>
+<script>
+    // url script app google sheet
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwcBsU1nnXfr5RPTiskBkiCxyuaSl4Ykq11qbOdec1M6Oh01-_R77Umdts0XkIt4cPxtg/exec';
+    // nama form
+    const form = document.forms['my-form'];
+    const btnKirim = document.querySelector('.btn-kirim');
+    const btnLoading = document.querySelector('.btn-loading');
+    const myAlert = document.querySelector('.my-alert');
+  
+    //Validasi file
+    const validasiFile = (data, type = ['pdf'], size = 500) => {
+      const tipe = new RegExp(type.join('|'), "i")
+      if (!tipe.test(data.files[0].type)) {
+        alert("Mohon upload file pdf!");
+        data.value = "";
+      } else if (data.files[0].size > size * 1024) {
+        alert("Ukuran maksimal file 500kb!");
+        data.value = "";
+      }
+    }
+  
+  
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      // ketika tombol submit di klik
+      // tampilkan tombol loading, hilangkan tombol kirim
+      btnLoading.classList.toggle('d-none');
+      btnKirim.classList.toggle('d-none');
+  
+
+    //   inputan file
+    // inputan harus dikasi nama awalan file 
+      var formData = new FormData(form);
+      let data = Object.fromEntries(formData);
+      let files = Object.keys(data)?.filter(x => {
+        return /^file/i.test(x)
+      })
+      if (files) {
+        for (const x of files) {
+          formData.append(x, await convertBase64(data[x]));
+        }
+      }
+
+
+
+      fetch(scriptURL, {
+        method: 'POST', body: formData
+      })
+      .then(response => {
+          // tampilkan tombol kirim, hilangkan tombol loading
+          btnLoading.classList.toggle('d-none');
+          btnKirim.classList.toggle('d-none');
+          // tampilkan alert
+          myAlert.classList.toggle('d-none');
+          // reset form
+          form.reset();
+          console.log('Success!', response);
+  
+      })
+      .catch(error => console.error('Error!', error.message))
+    })
+  
+    //untuk type file
+    const convertBase64 = (file) => {
+      return new Promise((resolve,
+        reject) => {
+        const fr = new FileReader();
+        fr.readAsDataURL(file);
+        fr.onload = () => {
+          resolve(fr.result)};
+        fr.onerror = reject
+      });
+    };
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>

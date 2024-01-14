@@ -1,1 +1,271 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PENGISIAN DATA </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- cdn icon bostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+   
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <div class="col-md-6">
+<br>
+        <div class="fw-bold">PENGISIAN DATA PENDIDIKAN POLRI (SIAPKAN FILE PDF UKURAN DIBAWAH 500KB)</div> 
+        <br>
+       
+        <form name="my-form">
+
+          <div class="mb-3">
+            <label class="form-label"> PENDIDIKAN KEPOLISIAN (jenis pendidikan dan rangkin)</label>
+            <div class="input-group mb-3">
+                <select name="jenisdikpolri" id="jenisdikpolri" class="form-select"  required>
+                    <option value="" selected>Pilih Salah Satu</option>
+                    <!-- <option value="kombespol">Kombes Pol</option> -->
+                    <option value="Bintara PTU">Bintara PTU</option>
+                    <option value="Bintara Brimob">Bintara Brimob</option>
+                    <option value="Tamtama Brimob">Tamtama Brimob</option>
+                    <option value="Tamtama Polairud">Tamtama Polairud</option>
+                </select>
+                <input type="number" class="form-control" id="rangkingpolri" name="rangkingpolri" required placeholder="Rangkin Pendidikan Polri" aria-label="Nama sma">
+               
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">TANGGAL MULAI DAN LULUS PENDIDIKAN POLRI</label>
+            <div class="input-group mb-3">
+                <input type="date" class="form-control" id="mulaidikpolri" name="mulaidikpolri" required placeholder="tanggal mulai pendidikan Polri" aria-label="tanggal mulai pendidikan Polri">
+                <input type="date" class="form-control" id="lulusdikpolri" name="lulusdikpolri" required placeholder="tanggal lulus pendidikan Polri" aria-label="tanggal lulus pendidikan Polri">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">IJAZAH POLRI / NOMOR DAN FILE PDF</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" id="noijazahpolri" name="noijazahpolri" required placeholder="Nomor Ijazah Polri" aria-label="Nomor Ijazah Polri">
+                <input type="file" class="form-control" id="file_ijazahpolri" name="file_ijazahpolri"  onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File Ijazah Polri" aria-label="File  Ijazah Polri" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">TRANSKRIP NILAI POLRI/ NOMOR DAN FILE PDF</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" id="nilaipolri" name="nilaipolri" required placeholder="Transkrip Nilai Polri" aria-label="Transkrip Nilai Polri">
+                <input type="file" class="form-control" id="file_transkrippolri" name="file_transkrippolri"  onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File Transkrip Polri" aria-label="File Transkrip Polri" required>
+            </div>
+        </div>
+
+
+<!-- alert -->
+<div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+    <strong>Terima Kasih !!</strong> Jawaban anda telah kami terima
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<!-- kirim -->
+            <div class="col-12" style="margin-top: 30px;">
+               <button type="submit" class="btn btn-primary btn-kirim">KIRIM JAWABAN ANDA</button>
+
+               <a href="index.html" class="btn btn-danger btn-logout d-none " >LOG OUT</a>
+
+               <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                <span role="status">Loading...</span>
+              </button>
+            </div>
+
+        </form>
+        
+        <small class="block">Dev By Brigpol Romi Sunggara  <a href="https://instagram.com/romisunggara?igshid=OGQ5ZDc2ODk2ZA==">@romisunggara</a>
+    </small>
+
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+
+    
+    <!-- <small class="block">
+        &copy; 2023 BIRO SDM POLDA SULSEL
+        </small> -->
+
+</div>
+
+
+<!-- <div style="padding:20px">
+<iframe weidth="1000" height="600" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzTI49L667Kajyy1tyu78d3J6kb0jlyMqocMF8a-zzxNPoUg8hMJpmMeUy-tTaW-hV-3xA4GSVrqyU/pubhtml?gid=1328465709&single=true"></iframe>
+</div>
+</div> -->
+
+
+</body>
+<!-- script sweet alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  // untukmengalihkan kehalaman pertama jika tidak isi
+  if(!sessionStorage.getItem('data_1')) window.location.assign("index.html")
+
+    // url script app google sheet
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwcBsU1nnXfr5RPTiskBkiCxyuaSl4Ykq11qbOdec1M6Oh01-_R77Umdts0XkIt4cPxtg/exec';
+    // nama form
+    const form = document.forms['my-form'];
+    const btnKirim = document.querySelector('.btn-kirim');
+    const btnLoading = document.querySelector('.btn-loading');
+    const myAlert = document.querySelector('.my-alert');
+    const logOut = document.querySelector('.btn-logout');
+  
+    //Validasi file biasa tanpa sweet alert
+    //     const validasiFile = (data, type = ['pdf'], size = 500) => {
+    //     const tipe = new RegExp(type.join('|'), "i")
+    //     if (!tipe.test(data.files[0].type)) {
+    //         const allowed = type.join(", ")
+    //         alert("Mohon upload file " + allowed);
+    //         data.value = "";
+    //     } else if (data.files[0].size > size * 1024) {
+    //       alert("Ukuran maksimal file "+size+"kb!");
+    //         data.value = "";
+    //     }
+    // }
+
+    //Validasi file biasa dgn sweet alert
+    const validasiFile = (data, type = ['pdf'], size = 500) => {
+    const tipe = new RegExp(type.join('|'), "i")
+    if (!tipe.test(data.files[0].type)) {
+        const allowed = type.join(", ")
+        Swal.fire({
+            icon: "info",
+            text: "Mohon hanya upload file dengan format " + allowed,
+        });
+        data.value = "";
+        } else if (data.files[0].size > size * 1024) {
+            Swal.fire({
+                icon: "error",
+                text: "Ukuran maksimal file " + size + "kb",
+            });
+            data.value = "";
+        }
+       } 
+  
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      // ketika tombol submit di klik
+      // tampilkan tombol loading, hilangkan tombol kirim
+      btnLoading.classList.toggle('d-none');
+      btnKirim.classList.toggle('d-none');
+  
+
+    //   inputan file
+    // inputan harus dikasi nama awalan file 
+      var formData = new FormData(form);
+      let data = Object.fromEntries(formData);
+      let files = Object.keys(data)?.filter(x => {
+        return /^file/i.test(x)
+      })
+      if (files) {
+        for (const x of files) {
+          formData.append(x, await convertBase64(data[x]));
+        }
+      }
+      
+      // mengambil data dari halaman 1
+        const data_1 = JSON.parse(sessionStorage.getItem("data_1"));
+        Object.keys(data_1).forEach(key => {
+        formData.append(key, data_1[key])
+            })
+        console.log(Object.fromEntries(formData))
+
+
+
+
+      //data bisa edit apabila double input
+    fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.result == "success") {
+            // tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle('d-none');
+
+            // tampilkan tombol kirim berdampingan dgn log out
+            // btnKirim.classList.toggle('d-none');
+
+            // tampilkan alert
+            myAlert.classList.toggle('d-none');
+            logOut.classList.toggle('d-none');
+            // reset form
+            form.reset();
+          
+
+            // menghapus data sesiaon dari halaman pertama wajib diakhir
+            sessionStorage.clear()
+
+            
+            if (data.updated) {
+              Swal.fire({
+              title: "DATA UPDATE",
+              text: "ANDA PERNAH INPUT DATA DENGAN NIK YANG SAMA",
+              icon: "question"
+            });
+            }
+              } else {
+                // atur alert sesuai dgn app script apakah diisinkan update atau tidak memasukkan data
+                if(data.code == 'duplicate'){
+                  // tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle('d-none');
+
+                  // tampilkan tombol kirim berdampingan dgn log out
+                  // btnKirim.classList.toggle('d-none');
+
+                  // tampilkan alert
+                        myAlert.classList.toggle('d-none');
+                  logOut.classList.toggle('d-none');
+            // reset form
+            form.reset();
+            // menghapus data sesiaon dari halaman pertama wajib diakhir
+            sessionStorage.clear()
+                  Swal.fire({
+                  title: "DATA DOUBLE",
+                  text: "DATA TIDAK DITERIMA KARENA ANDA PERNAH INPUT DATA DENGAN NRP YANG SAMA",
+                  icon: "question"
+            });
+
+            }else{
+              alert("gagal mengirim data")
+           }
+           }
+              })
+         .catch(error => console.error('Error!', error.message))
+           })
+
+    //untuk type file
+    const convertBase64 = (file) => {
+      return new Promise((resolve,
+        reject) => {
+        const fr = new FileReader();
+        fr.readAsDataURL(file);
+        fr.onload = () => {
+          resolve(fr.result)};
+        fr.onerror = reject
+      });
+    };
+
+   
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
 

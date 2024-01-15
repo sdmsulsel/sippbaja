@@ -25,7 +25,7 @@
         <div class="fw-bold">PENGISIAN DATA BAJA DAN TAJA</div> 
         <br>
         <div class="alert alert-danger alert-dismissible fade show " role="alert">
-          <strong>Sebelum Melakukan Penginputan data Harap Siapkan File ukuran dibawah 500 kb : <br>
+          <strong>Sebelum Melakukan Penginputan data Harap Siapkan File ukuran dibawah 500 kb FORM INI SIFATNYA SEKALI PENGISIAN UNTUK SATU NRP HARAP DIISIKAN DATA YANG BENAR : <br>
           1. Foto PDH (jenis file png,jpeg,jpg).
           <br>
           2. Kartu Keluarga dan KTP (jenis file pdf).
@@ -44,11 +44,17 @@
         <form name="my-form">
 
             <div class="mb-3">
-                <label class="form-label">PROFIL</label>
+                <label class="form-label">NAMA LENGKAP</label>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" id="nama" name="nama" required placeholder="Nama Lengkap" aria-label="NAMA LENGKAP ANDA">
                 </div>
             </div>
+            <div class="mb-3">
+              <label class="form-label">NAMA PANGGILAN</label>
+              <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="nama_panggilan" name="nama_panggilan" required placeholder="Nama Lengkap" aria-label="NAMA LENGKAP ANDA">
+              </div>
+          </div>
             <div class="mb-3">
                 <label class="form-label">PHOTO PDH LATAR KUNING (FILE Png,Jpeg,Jpg ukuran minimal 500 KB)</label>
                 <div class="input-group mb-3">
@@ -107,7 +113,118 @@
                     <input type="number" class="form-control" id="nrp" name="nrp" required placeholder="NRP ANDA" aria-label="NRP LENGKAP ANDA">
                 </div>
             </div>
-            
+            <div class="mb-3">
+              <label class="form-label">EMAIL PRIBADI</label>
+              <div class="input-group mb-3">
+                  <input type="email" class="form-control" id="email" name="email" required placeholder="EMAIL PRIBADI ANDA" aria-label="EMAIL LENGKAP ANDA">
+              </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">NOMOR TELEPHONE (WHATSAPP)</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" id="hp" name="hp" required placeholder="NOMOR TELEPHONE" aria-label="NOMOR TELEPHONE">
+            </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">GOLONGAN DARAH</label>
+          <div class="input-group mb-3">
+              <select name="darah" id="darah" class="form-select"  required>
+                   <option value="" selected>Pilih Salah Satu</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="O">O</option>
+                  <option value="AB">AB</option>
+              </select>
+          </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">JENIS RAMBUT</label>
+        <div class="input-group mb-3">
+            <select name="rambut" id="rambut" class="form-select"  required>
+                 <option value="" selected>Pilih Salah Satu</option>
+                <option value="LURUS">LURUS</option>
+                <option value="BERGELOMBANG">BERGELOMBANG</option>
+                <option value="IKAL">IKAL</option>
+            </select>
+        </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">ANAK KE .... DARI .... BERSAUDARA (contoh penulisan : 3 DARI 5 BERSAUDARA) </label>
+      <div class="input-group mb-3">
+          <input type="text" class="form-control" id="anakke" name="anakke" required placeholder="ANAK KE... DARI ....." aria-label="ANAK KE... DARI .....">
+      </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">AGAMA</label>
+    <div class="input-group mb-3">
+        <select name="agama" id="agama" class="form-select"  required>
+             <option value="" selected>Pilih Salah Satu</option>
+            <option value="ISLAM">ISLAM</option>
+            <option value="KATOLIK">KATOLIK</option>
+            <option value="KRISTEN">KRISTEN</option>
+            <option value="BUDHA">BUDHA</option>
+            <option value="HINDU">HINDU</option>
+            <option value="KHONGHUCU">KHONGHUCU</option>
+        </select>
+    </div>
+</div>
+<div class="mb-3">
+  <label class="form-label">NAMA IBU </label>
+  <div class="input-group mb-3">
+      <input type="text" class="form-control" id="ibu" name="ibu" required placeholder="NAMA LENGKAP IBU" aria-label="NAMA LENGKAP IBU">
+  </div>
+</div>
+<div class="mb-3">
+  <label class="form-label">ALAMAT PERSONEL</label>
+  <div class="input-group mb-3">
+      <input type="text" class="form-control" id="alamat" name="alamat" required placeholder="ALAMAT ANDA" aria-label="ALAMAT ANDA">
+  </div>
+</div>
+<div class="mb-3">
+  <label class="form-label">ALAMAT ORANG TUA</label>
+  <div class="input-group mb-3">
+      <input type="text" class="form-control" id="alamat_ortu" name="alamat_ortu" required placeholder="ALAMAT ORANG TUA" aria-label="ALAMAT ORANG TUA">
+  </div>
+</div>
+<div class="mb-3">
+  <label class="form-label">TINGGI (SATUAN CM DITULISKAN ANGKA SAJA)</label>
+  <div class="input-group mb-3">
+      <input type="number" class="form-control" id="tinggi" name="tinggi" required placeholder="TINGGI ANDA" aria-label="TINGGI ANDA">
+  </div>
+</div>
+<div class="mb-3">
+  <label class="form-label">BERAT (SATUAN KG DITULISKAN ANGKA SAJA)</label>
+  <div class="input-group mb-3">
+      <input type="number" class="form-control" id="berat" name="berat" required placeholder="BERAT ANDA" aria-label="BERAT ANDA">
+  </div>
+</div>
+<div class="mb-3">
+  <label class="form-label">UKURAN TOPI DINAS (DITULISKAN ANGKA SAJA)</label>
+  <div class="input-group mb-3">
+      <input type="number" class="form-control" id="topi" name="topi" required placeholder="UKURAN TOPI ANDA" aria-label="UKURAN TOPI ANDA">
+  </div>
+</div> 
+<div class="mb-3">
+  <label class="form-label">UKURAN SEPATU DINAS (DITULISKAN ANGKA SAJA)</label>
+  <div class="input-group mb-3">
+      <input type="number" class="form-control" id="sepatu" name="sepatu" required placeholder="UKURAN SEPATU ANDA" aria-label="UKURAN SEPATU ANDA">
+  </div>
+</div> 
+<div class="mb-3">
+  <label class="form-label">UKURAN BAJU DINAS (DITULISKAN ANGKA SAJA contoh : 14)</label>
+  <div class="input-group mb-3">
+      <input type="number" class="form-control" id="baju" name="baju" required placeholder="UKURAN BAJU ANDA" aria-label="UKURAN BAJU ANDA">
+  </div>
+</div> 
+<div class="mb-3">
+  <label class="form-label">UKURAN CELANA DINAS (DITULISKAN ANGKA SAJA contoh : 32)</label>
+  <div class="input-group mb-3">
+      <input type="number" class="form-control" id="celana" name="celana" required placeholder="UKURAN CELANA ANDA" aria-label="UKURAN CELANA ANDA">
+  </div>
+</div> 
+
+
 
 <!-- alert -->
 <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">

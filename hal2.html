@@ -26,7 +26,12 @@
         <br>
        
         <form name="my-form">
-
+            <div class="mb-3">
+                <label class="form-label">AKTE KELAHIRAN FILE PDF</label>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="file_akte" name="file_akte" onchange="validasiFile(this, ['pdf'], 500)" required placeholder="File Akte Kelahiran anda" aria-label="File Akte Kelahiran Anda" required>
+                </div>
+            </div>
            
             <div class="mb-3">
                 <label class="form-label">KARTU KELUARGA / NOMOR DAN FILE PDF</label>
